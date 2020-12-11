@@ -1,0 +1,87 @@
+/*<!--***************************************************************************************************************************
+*   styles.css : This file contains the 'styles' for thi web app. 
+*   Author: Diego Esquivel
+*   Date: 05/03/2020 V1.5.03 
+*   Purpose: The purpose of the file is to properly show the decorating means for the chat web app.
+****************************************************************************************************************************-->*/
+
+/* apply a natural box layout model to all elements */
+* {
+   -moz-box-sizing: border-box;
+   -webkit-box-sizing: border-box;
+   box-sizing: border-box;
+}
+
+/* reset rules */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+   margin: 0;
+   padding: 0;
+   border: 0;
+   font-size: 100%;
+   font: inherit;
+   vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+   display: block;
+}
+
+
+.login_form {
+border: 1px solid #AAA;
+padding:10px;
+}
+h3 {margin-top:3px;}
+.chat_main {
+border:1px solid #AAA;
+-moz-box-shadow:0 0 10px #ccc;
+-webkit-box-shadow: 0 0 10px #ccc;
+width:600px;/*350px;*/
+padding:10px;
+background:#f3f3f3;
+}
+.message {
+border:1px solid #AAA;
+margin:4px;
+padding:5px;
+-moz-border-radius:7px;
+-webkit-border-radius:7px;
+background:#ffffff;
+}
+.textf {-moz-box-shadow:0 0 10px #CCCCCC;
+-webkit-box-shadow:0 0 10px #CCCCCC;
+border:1px solid #CCCCCC;
+height:40px;}
+.submit {
+-moz-border-radius:7px;
+-webkit-border-radius:7px;
+background:#F3F3F3;
+border:1px solid #CCCCCC;
+font-size:16px;
+font-weight:bold;
+height:35px;
+margin-left:10px;
+padding:5px;
+}
+.message span {
+font-size:10px;
+color:#888;
+margin-left:10px;
+}
+.submit_form {
+margin:10px 0px;
+}

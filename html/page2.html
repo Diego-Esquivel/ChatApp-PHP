@@ -1,0 +1,87 @@
+<!--***************************************************************************************************************************
+*   page2.php : This file contains the real 'chat app' view of the web app.
+*	Diego Esquivel
+*   Date: 05/03/2020 V1.5.03 
+*   Purpose: The purpose of the file is to properly show the a view for the web app. This includes the messages, contacts,
+*	means for messaging, and means for verifying no backgrounding into the web app w no log in.
+****************************************************************************************************************************-->
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Page2</title>
+	</head>
+	<!-- HTML4 and older **************************************************************************************-->
+	<!--<frameset rows="60%,*,*" framespacing="1" frameborder="yes" border="1" bordercolor="#FF0000" id="null">-->
+	<!--<frame src="messages.php" name="message_frame">-->
+	<!--<frame src="teams.php" name="team_frame" scrolling="yes">-->
+		<!--<frame src="register.php" name="login_frame" scrolling="yes" noresize target="middle">-->
+	<body>
+		<script type="text/javascript">
+		//iframe for new HTML5 forward(so far)
+			var ifrm1 = document.createElement('iframe');
+			ifrm1.setAttribute('id','ifrm1');
+			ifrm1.setAttribute('src','messages.php');
+			ifrm1.setAttribute('name','mesage_frame');
+			var desiredHeight = window.innerHeight*6 /10;
+			var desiredLength = window.innerWidth*10 /10;
+			ifrm1.setAttribute('height',desiredHeight);
+			ifrm1.setAttribute('width',desiredLength);
+			document.body.appendChild(ifrm1);
+			
+			var ifrm2 = document.createElement('iframe');
+			ifrm2.setAttribute('id','ifrm2');
+			ifrm2.setAttribute('src','teams.php');
+			ifrm2.setAttribute('name','team_frame');
+			desiredHeight = window.innerHeight*4 /10;
+			ifrm1.setAttribute('width',desiredLength);
+			ifrm2.setAttribute('height',desiredHeight);
+			document.body.appendChild(ifrm2);
+			
+			function verifyPage(){
+				var return_value = true;
+				if(window.frames[2].location.href != "http://localhost/source/page_login_verify.php")
+				{
+					return_value = false;
+					console.log("false");
+					
+					window.location.replace("main.php");
+				}
+				return return_value;
+			}
+			
+			function createEventListener()	{
+				var ifrm = document.createElement('iframe');
+				ifrm.setAttribute('id', 'ifrm3'); // assign an id
+				ifrm.setAttribute('src', 'page_login_verify.php');
+				ifrm.setAttribute('style','display:none');
+				document.body.appendChild(ifrm); // to place at end of document//has problems
+
+				// to place before another page element
+				//var el = document.getElementsByName("message_frame");
+				//var pi = document.getElementsByTagName("frameset");//.setAttribute('rows',"40%,20%,40%");
+				//pi.setAttribute('rows','40%,20%,40%');
+				//el.parentNode.insertBefore(ifrm, el);
+
+				// assign url
+				setInterval(verifyPage,6000);
+				//Question about this, the how get it work for load in load contentWindow
+				/*if(ifrm.addEventListener)	{
+					ifrm.contentWindow.addEventListener("load", function(e, ifrm){setInterval(verifyPage(ifrm),6000);setTimeout(verifyPage(ifrm),200);},false);
+
+				} else if(ifrm.attachEvent)	{
+					addButton.attachEvent("onload", function(e,ifrm){setInterval(verifyPage(ifrm),6000);setTimeout(verifyPage(ifrm),200);});		
+				}*/
+			}// end function createEventListener() to create event listeners for button, 'enter' key;
+			
+			function setupPage() {
+				createEventListener();
+			}// end function setupPage() which sets up page through calls to createEventListener(), starting first question, and hiding unneccesary inputs;
+		
+			if(window.addEventListener) window.addEventListener("load",setupPage, false);
+			else if(window.attachEvent) window.attachEvent("onload", setupPage);
+			
+			// end onload even listeners;
+		</script>
+	</body>	
+</html>
