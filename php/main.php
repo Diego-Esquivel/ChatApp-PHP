@@ -7,7 +7,7 @@
 
 <?php 
 	include('functions.php') ;
-	require_once('inc/chat.inc.php');
+	require_once('../inc/chat.inc.php');
 	
 	$oSimpleChat = new SimpleChat();
 	// draw chat application
@@ -43,7 +43,7 @@
 			<button type="submit" class="btn" name="login_btn">Login</button>
 		</div>
 		<p>
-			Not yet a member? <a href="index.php">Sign up</a>
+			Not yet a member? <a href="../index.php">Sign up</a>
 		</p>
 	</form>
 </body>

@@ -8,7 +8,7 @@
 
 <?php 
 	include('functions.php');
-	include('inc/chat.inc.php');
+	include('../inc/chat.inc.php');
 
 	$oSimpleChat = new SimpleChat();
 

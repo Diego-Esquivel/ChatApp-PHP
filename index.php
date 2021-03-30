@@ -6,14 +6,14 @@
 ****************************************************************************************************************************-->
 
 <?php 
-	include('functions.php') ;
+	include('php/functions.php') ;
 	include('inc/chat.inc.php');
 
 	// draw chat application
 	$sChatResult = 'Need login before using';
 	
     if (isLoggedIn()){
-		header('location: main.php');
+		header('location: php/main.php');
     }
 ?>
 <!DOCTYPE html>
@@ -48,7 +48,7 @@
 				<button type="submit" class="btn" name="register_btn">Register</button>
 			</div>
 			<p>
-				Already a member? <a href="main.php">Sign in</a>
+				Already a member? <a href="php/main.php">Sign in</a>
 			</p>
 		</form>
 	</body>

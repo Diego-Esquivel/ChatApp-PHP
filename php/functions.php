@@ -240,10 +240,10 @@ $username = e($_COOKIE['member_name']);
 	$query = "INSERT INTO contacts (username, userID, id ,`when`) 
 					  VALUES((SELECT username FROM login WHERE username = '$add_contact'), (SELECT userID FROM sign_up WHERE username = '$username'), '999' ,UNIX_TIMESTAMP())";
 			mysqli_query($db, $query);
-		echo "<script>window.location.href('page2.html');</script>";
+		echo "<script>window.location.href('../html/page2.html');</script>";
 	} else{
 		$name_error = "Sorry name doesn't exist;";
-	}
+	}//end validate if/else
 }
 
 

@@ -8,7 +8,7 @@
 
 <?php 
 	include('functions.php');
-	include('inc/chat.inc.php');
+	include('../inc/chat.inc.php');
 
 	if(!isLoggedIn()){
 		$_SESSION['msg'] = "You must log in first";
@@ -19,7 +19,7 @@
 <html>
 <head>
 	<title>Home</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="../css/style.css">
 </head>
 <body>
 	<div class="header">
@@ -91,7 +91,7 @@
 		if(isset($_GET['link'])){
 			setdetailfunction($_GET['link']);
 			echo $_GET['link'];
-			header('location: page2.html');
+			header('location: ../html/page2.html');
 			//echo "PIE";
 		}
 	?>

@@ -21,7 +21,7 @@
 		//iframe for new HTML5 forward(so far)
 			var ifrm1 = document.createElement('iframe');
 			ifrm1.setAttribute('id','ifrm1');
-			ifrm1.setAttribute('src','messages.php');
+			ifrm1.setAttribute('src','../php/messages.php');
 			ifrm1.setAttribute('name','mesage_frame');
 			var desiredHeight = window.innerHeight*6 /10;
 			var desiredLength = window.innerWidth*10 /10;
@@ -31,7 +31,7 @@
 			
 			var ifrm2 = document.createElement('iframe');
 			ifrm2.setAttribute('id','ifrm2');
-			ifrm2.setAttribute('src','teams.php');
+			ifrm2.setAttribute('src','../php/teams.php');
 			ifrm2.setAttribute('name','team_frame');
 			desiredHeight = window.innerHeight*4 /10;
 			ifrm1.setAttribute('width',desiredLength);
@@ -40,12 +40,12 @@
 			
 			function verifyPage(){
 				var return_value = true;
-				if(window.frames[2].location.href != "http://localhost/source/page_login_verify.php")
+				if(window.frames[2].location.href != "http://localhost/ThatFinalProj/ChatApp-PHP/php/page_login_verify.php")
 				{
 					return_value = false;
 					console.log("false");
 					
-					window.location.replace("main.php");
+					window.location.replace("../php/main.php");
 				}
 				return return_value;
 			}
@@ -53,7 +53,7 @@
 			function createEventListener()	{
 				var ifrm = document.createElement('iframe');
 				ifrm.setAttribute('id', 'ifrm3'); // assign an id
-				ifrm.setAttribute('src', 'page_login_verify.php');
+				ifrm.setAttribute('src', '../php/page_login_verify.php');
 				ifrm.setAttribute('style','display:none');
 				document.body.appendChild(ifrm); // to place at end of document//has problems
 

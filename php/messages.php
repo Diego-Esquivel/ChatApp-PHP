@@ -9,7 +9,7 @@
 <meta http-equiv="refresh" content="4">
 <?php
 	include('functions.php');
-	require_once('inc/chat.inc.php');
+	require_once('../inc/chat.inc.php');
 
 	$oSimpleChat = new SimpleChat();
 	if(checkissetdetail('link')){

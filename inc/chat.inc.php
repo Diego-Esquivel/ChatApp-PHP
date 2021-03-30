@@ -45,7 +45,7 @@
 			}
 
 			ob_start();
-			require_once('chat_input.html');
+			require_once('../html/chat_input.html');
 			$sShoutboxForm = ob_get_clean();
 
 			return $sShoutboxForm;
@@ -81,9 +81,9 @@
 			mysqli_close($vLink);
 
 			ob_start();
-			require_once('chat_begin.html');
+			require_once('../html/chat_begin.html');
 			echo $sMessages;
-			require_once('chat_end.html');
+			require_once('../html/chat_end.html');
 			return ob_get_clean();
 		}
 	}
